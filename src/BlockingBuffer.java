@@ -15,14 +15,14 @@ public class BlockingBuffer implements Buffer {
 	public void blockingPut(int value) throws InterruptedException {
 		buffer.put(value); // place value in buffer
 		System.out.printf("%s%2d\t%s%d%n", "Productor escribe      ", value,
-				"Buffer cells occupied: ", buffer.size());
+				"Celdas del buffer ocupadas: ", buffer.size());
 	}
 
 	// return value from buffer
 	public int blockingGet() throws InterruptedException {
 		int readValue = buffer.take(); // remove value from buffer
 		System.out.printf("%s %2d\t%s%d%n", "Consumidor lee        ",
-				readValue, "Buffer cells occupied: ", buffer.size());
+				readValue, "Celdas del buffer ocupadas: ", buffer.size());
 
 		return readValue;
 	}
